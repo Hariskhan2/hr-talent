@@ -1,68 +1,102 @@
 "use client"
 
-import { Search, MessageSquare, Bell, ChevronDown } from "lucide-react"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { User, Settings, LogOut, Bell, ChevronDown, MessageCircleMore, Search, Menu } from "lucide-react"
 
-export function Header() {
+type props = {
+  handleSidebar: () => void;
+}
+
+const Header = ({ handleSidebar }: props) => {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-[#0F4C81] rounded-2xl text-white">
-      <div className="flex h-16 items-center gap-4 px-6">
-        {/* Dashboard Title */}
-        <div className="flex items-center">
-          <h1 className="text-xl font-semibold">Dashboard</h1>
-        </div>
+    <header className="fixed top-2 left-0 z-50 w-full">
+      <div className="bg-gradient-to-b ml-[237px] max-[1023px]:ml-[12px] mr-3 from-[#0A66C2] to-[#05305C] rounded-xl text-white">
+        <div className="flex py-3 items-center justify-between px-6">
 
-        {/* Search Bar */}
-        <div className="relative flex-1 max-w-md ml-auto">
-          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
-          <Input
-            type="search"
-            placeholder="Search candidate, vacancy, etc"
-            className="pl-10 bg-white/95 border-none text-gray-900 placeholder:text-gray-500"
-          />
-        </div>
+          <div className="flex gap-2 items-center">
+            <Menu onClick={handleSidebar} className="max-[1023px]:block hidden cursor-pointer" />
+            <h1 className="lg:text-2xl text-xl font-medium text-white">Dashboard</h1>
+          </div>
 
-        {/* Action Icons */}
-        <div className="flex items-center gap-2">
-          {/* Messages */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="hover:bg-white/10 text-white"
-          >
-            <MessageSquare className="h-5 w-5" />
-          </Button>
+          <div className="flex items-center gap-4 max-[1100px]:gap-2">
 
-          {/* Notifications */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="hover:bg-white/10 text-white relative"
-          >
-            <Bell className="h-5 w-5" />
-            <span className="absolute top-1 right-1 h-2 w-2 rounded-full bg-red-500" />
-          </Button>
-
-          {/* User Profile */}
-          <Button
-            variant="ghost"
-            className="flex items-center gap-2 hover:bg-white/10 text-white px-3"
-          >
-            <Avatar className="h-8 w-8">
-              <AvatarFallback className="bg-white text-[#0F4C81] font-semibold">
-                AS
-              </AvatarFallback>
-            </Avatar>
-            <div className="flex flex-col items-start text-left">
-              <span className="text-sm font-medium">Andrew Sebastian</span>
-              <span className="text-xs text-white/70">Lead HR</span>
+            <div className="relative w-[250px] max-[1100px]:w-[190px] max-[1020px]:hidden">
+              <Search color="#6D6E75" size={18} className="absolute left-2 top-3 flex items-center pointer-events-none" />
+              <input
+                type="text"
+                placeholder="Search candidate, vacancy, etc."
+                className="w-full pl-8 pr-4 py-2.5 bg-white rounded-[8px] placeholder:font-thin text-gray-900 placeholder-gray-400 text-sm max-[110px]:text-[12px] focus:outline-none"
+              />
             </div>
-            <ChevronDown className="h-4 w-4" />
-          </Button>
+
+            <button className="p-2 hover:bg-white/10 rounded-lg transition-colors">
+              <MessageCircleMore />
+            </button>
+
+            <button className="relative p-2 hover:bg-white/10 rounded-lg transition-colors">
+              <Bell />
+              <span className="absolute top-1 right-1 h-4 w-4 bg-red-500 rounded-full flex items-center justify-center">
+                <span className="text-xs text-white font-bold">3</span>
+              </span>
+            </button>
+
+
+            <div className="max-[600px]:hidden">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <div className="flex items-center gap-3 pl-4 rounded-lg px-2 py-1">
+                    <div className="w-8 h-8 bg-blue-300 rounded-lg flex items-center justify-center">
+                      <span className="text-blue-800 font-semibold text-sm">AS</span>
+                    </div>
+                    <div className="flex flex-col text-left">
+                      <span className="text-white font-medium text-sm">Andrew Sebastian</span>
+                      <span className="text-white/80 text-xs">Lead HR</span>
+                    </div>
+                    <ChevronDown size={18} />
+                  </div>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56" align="end">
+                  <DropdownMenuLabel className="font-normal">
+                    <div className="flex flex-col space-y-1">
+                      <p className="text-sm font-medium leading-none">Andrew Sebastian</p>
+                      <p className="text-xs leading-none text-muted-foreground">
+                        andrew.sebastian@company.com
+                      </p>
+                    </div>
+                  </DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem>
+                    <User className="mr-2 h-4 w-4" />
+                    <span>Profile</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Bell className="mr-2 h-4 w-4" />
+                    <span>Notifications</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Settings className="mr-2 h-4 w-4" />
+                    <span>Settings</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem className="text-red-600">
+                    <LogOut className="mr-2 h-4 w-4" />
+                    <span>Log out</span>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
+          </div>
         </div>
       </div>
     </header>
   )
 }
+
+export default Header;

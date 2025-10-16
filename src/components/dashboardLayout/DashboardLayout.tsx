@@ -1,23 +1,32 @@
 "use client"
 
-import { Header } from "./Header"
-import { Sidebar } from "./Sidebar"
+import { useState } from "react"
+import Header from "./Header"
+import Sidebar from "./Sidebar"
 
 interface DashboardLayoutProps {
   children: React.ReactNode
 }
 
 export function DashboardLayout({ children }: DashboardLayoutProps) {
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const handleSidebar = () => {
+    setIsSidebarOpen(true);
+  }
+
+  const sidebarClose = () => {
+    setIsSidebarOpen(false);
+  }
+
   return (
-    <div className="min-h-screen flex m-2">
-      <div className="min-h-screen flex mr-2">
-        <Sidebar />
-      </div>
+    <div className="min-h-screen flex bg-[#F3F3F3]">
+      <Header handleSidebar={handleSidebar} />
+      <Sidebar isOpen={isSidebarOpen} />
+      {isSidebarOpen && <div onClick={sidebarClose} className="absolute inset-0 bg-black/50 z-[60]" />}
       <div className="flex-1 flex flex-col">
-        <div className="mb-2">
-          <Header />
-        </div>
-        <main className="flex-1 bg-gray-50">
+        <main className="flex-1 px-3 ml-[233px] max-[1023px]:ml-0 mt-24 bg-[#F3F3F3]">
           {children}
         </main>
       </div>
