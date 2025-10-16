@@ -28,6 +28,7 @@ const navigationItems = [
   { name: "Recruitment Board", icon: SquareUser, href: "/recruitmentBoard" },
   { name: "Question Bank", icon: MessageCircleMore, href: "/questionBank" },
   { name: "Settings", icon: Settings, href: "/settings" },
+  { name: "Access Control Center", icon: Settings, href: "/accessControlCenter" },
 ];
 
 const Sidebar = ({ isOpen }: props) => {
