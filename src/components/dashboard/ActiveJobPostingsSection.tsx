@@ -5,10 +5,10 @@ import { activeJobPostings } from '@/utils/mockData';
 
 const ActiveJobPostingsSection = () => {
   return (
-    <div className="bg-white rounded-lg p-4">
+    <div>
       <ActiveJobPostingsHeader />
-      
-      <div className="grid grid-cols-2 gap-4">
+
+      <div className="grid grid-cols-2 max-[500px]:grid-cols-1 gap-4">
         {activeJobPostings.map((job) => (
           <ActiveJobCard key={job.id} job={job} />
         ))}

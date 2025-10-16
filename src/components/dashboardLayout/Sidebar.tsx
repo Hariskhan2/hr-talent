@@ -6,7 +6,6 @@ import { useRouter } from "next/router"
 import {
   FileText,
   Users,
-  Video,
   Settings,
   MailOpen,
   LayoutGrid,
@@ -72,7 +71,7 @@ const Sidebar = ({ isOpen }: props) => {
         <p className="text-xs text-gray-600 mb-4">
           Upgrade your account with new features for better efficiency and effectiveness.
         </p>
-        <button className="w-full bg-gradient-to-r from-[#0A66C2] to-[#05305C] text-white py-2 rounded-lg text-sm font-medium hover:from-[#0d3f6b] hover:to-[#042a4a] transition-colors">
+        <button className="w-full bg-[#E3F1FF] text-black py-2 rounded-lg text-sm font-medium">
           Upgrade Now
         </button>
       </div>
