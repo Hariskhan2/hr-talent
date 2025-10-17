@@ -1,9 +1,13 @@
 "use client"
 
 import React, { useState } from 'react';
-import { Plus, ChevronDown, Star, Send, FileText, Trash2, AlertTriangle, Mail, ArrowBigRight } from 'lucide-react';
+import { Plus, ChevronDown, Star, Send, FileText, Trash2, AlertTriangle, Mail, ArrowBigRight, X } from 'lucide-react';
 
-const InboxSidebar = () => {
+interface InboxSidebarProps {
+  onClose?: () => void;
+}
+
+const InboxSidebar = ({ onClose }: InboxSidebarProps) => {
   const [activeTab, setActiveTab] = useState('Inbox');
   const [showJobTypeDropdown, setShowJobTypeDropdown] = useState(false);
 
@@ -18,6 +22,18 @@ const InboxSidebar = () => {
 
   return (
     <div className="h-full flex flex-col">
+      {/* Mobile Header */}
+      <div className="p-4 border-b border-gray-200 max-[1099px]:block hidden">
+        <div className="flex items-center justify-between">
+          <h1 className="text-lg font-semibold text-gray-900">Inbox</h1>
+          <button 
+            onClick={onClose}
+            className="p-2 text-gray-600 hover:bg-gray-100 rounded-lg"
+          >
+            <X size={20} />
+          </button>
+        </div>
+      </div>
 
       <div className="p-3">
         <div className="space-y-1">
@@ -27,13 +43,13 @@ const InboxSidebar = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`w-full text-sm flex items-center gap-3 px-3 py-2 text-left rounded-lg transition-colors ${activeTab === tab.id
+                className={`w-full text-sm flex items-center gap-3 px-3 py-2 text-left rounded-lg transition-colors max-[1099px]:py-3 ${activeTab === tab.id
                   ? 'bg-[#F4F8FC] text-black'
                   : 'text-[#6D6E75]'
                   }`}
               >
-                <Icon className="w-6 h-6" />
-                <span className="text-sm">{tab.label}</span>
+                <Icon className="w-6 h-6 max-[1099px]:w-5 max-[1099px]:h-5" />
+                <span className="text-sm max-[1099px]:text-base">{tab.label}</span>
               </button>
             );
           })}

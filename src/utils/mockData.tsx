@@ -231,7 +231,6 @@ export interface Email {
   attachments?: string[];
 }
 
-
 export const mockEmails: Email[] = [
   {
     id: '1',
@@ -247,7 +246,8 @@ export const mockEmails: Email[] = [
     status: 'Final Interview',
     isRead: false,
     isStarred: false,
-    content: 'Dear Team,\n\nI hope this message finds you well. As we approach the final quarter of the year, it\'s essential to finalize our budget to ensure all departments can operate smoothly and efficiently.\n\nAttached, you will find the proposed budget for Q4, which reflects our projected needs and allocations for the upcoming projects and departmental expenses. We have made several adjustments to optimize our resources and anticipate potential needs.\n\nPlease review the proposed budget carefully and provide your feedback or approval by Wednesday. Your prompt response will help us stay on track with our financial planning and ensure no delays in departmental activities.\n\nThank you for your attention to this matter and your ongoing commitment to our financial health.\n\nBest regards,\n\nEmily Carter\nData Scientist\ne.carter@company.com'
+    content:
+      'Dear Team,\n\nThis is a quick update on tomorrow’s final interview session. The shortlisted candidates have confirmed their attendance, and the final round will focus primarily on technical problem-solving and communication assessment.\n\nPlease make sure you’ve reviewed the candidate summaries in the attached document. Your feedback during the session will help us finalize the selection efficiently.\n\nRegards,\nEmily Carter\nData Scientist'
   },
   {
     id: '2',
@@ -263,14 +263,15 @@ export const mockEmails: Email[] = [
     status: 'Rejected',
     isRead: true,
     isStarred: false,
-    content: 'Dear Team,\n\nI hope this message finds you well. As we approach the final quarter of the year, it\'s essential to finalize our budget to ensure all departments can operate smoothly and efficiently.\n\nAttached, you will find the proposed budget for Q4, which reflects our projected needs and allocations for the upcoming projects and departmental expenses. We have made several adjustments to optimize our resources and anticipate potential needs.\n\nPlease review the proposed budget carefully and provide your feedback or approval by Wednesday. Your prompt response will help us stay on track with our financial planning and ensure no delays in departmental activities.\n\nThank you for your attention to this matter and your ongoing commitment to our financial health.\n\nBest regards,\n\nLucas Green\nDeveloper\nl.green@company.com'
+    content:
+      'Hello Team,\n\nThank you for taking the time to meet with me this week. I understand that I was not selected for the next stage, but I truly appreciated the opportunity to learn more about your team’s projects and culture.\n\nI hope to stay in touch and would be grateful if you could keep my details on file for future openings that match my skills.\n\nWarm regards,\nLucas Green'
   },
   {
     id: '3',
     sender: {
       name: 'Sarah Johnson',
       email: 's.johnson@company.com',
-      role: 'UIUX designer'
+      role: 'UI/UX Designer'
     },
     subject: 'Monthly Performance Review',
     preview: 'Screening (HR)',
@@ -279,7 +280,8 @@ export const mockEmails: Email[] = [
     status: 'Screening (HR)',
     isRead: true,
     isStarred: false,
-    content: 'Dear Team,\n\nI hope this message finds you well. As we approach the final quarter of the year, it\'s essential to finalize our budget to ensure all departments can operate smoothly and efficiently.\n\nAttached, you will find the proposed budget for Q4, which reflects our projected needs and allocations for the upcoming projects and departmental expenses. We have made several adjustments to optimize our resources and anticipate potential needs.\n\nPlease review the proposed budget carefully and provide your feedback or approval by Wednesday. Your prompt response will help us stay on track with our financial planning and ensure no delays in departmental activities.\n\nThank you for your attention to this matter and your ongoing commitment to our financial health.\n\nBest regards,\n\nSarah Johnson\nUIUX designer\ns.johnson@company.com'
+    content:
+      'Dear HR Team,\n\nI’ve completed the design performance summary for Q3, which includes UX testing results, engagement feedback, and a short proposal for optimizing our current interface. I’ve attached the report for your review.\n\nLet me know if we can schedule a short session next week to discuss improvements before Q4 begins.\n\nKind regards,\nSarah Johnson\nUI/UX Designer'
   },
   {
     id: '4',
@@ -295,14 +297,15 @@ export const mockEmails: Email[] = [
     status: 'Rejected',
     isRead: true,
     isStarred: false,
-    content: 'Dear Team,\n\nI hope this message finds you well. As we approach the final quarter of the year, it\'s essential to finalize our budget to ensure all departments can operate smoothly and efficiently.\n\nAttached, you will find the proposed budget for Q4, which reflects our projected needs and allocations for the upcoming projects and departmental expenses. We have made several adjustments to optimize our resources and anticipate potential needs.\n\nPlease review the proposed budget carefully and provide your feedback or approval by Wednesday. Your prompt response will help us stay on track with our financial planning and ensure no delays in departmental activities.\n\nThank you for your attention to this matter and your ongoing commitment to our financial health.\n\nBest regards,\n\nMichael Brown\nCandidate\nm.brown@company.com'
+    content:
+      'Dear Recruitment Team,\n\nI wanted to check on the current status of my application for the Sales Manager position. It has been two weeks since my last interview, and I was wondering if a decision has been made.\n\nI truly enjoyed meeting your team and learning about the role. Please let me know if there’s any additional information you need from my side.\n\nSincerely,\nMichael Brown'
   },
   {
     id: '5',
     sender: {
       name: 'Jessica Davis',
       email: 'j.davis@company.com',
-      role: 'Team'
+      role: 'Finance Lead'
     },
     subject: 'Budget Approval Needed',
     preview: 'Application Received',
@@ -311,7 +314,8 @@ export const mockEmails: Email[] = [
     status: 'Application Received',
     isRead: true,
     isStarred: false,
-    content: 'Dear Team,\n\nI hope this message finds you well. As we approach the final quarter of the year, it\'s essential to finalize our budget to ensure all departments can operate smoothly and efficiently.\n\nAttached, you will find the proposed budget for Q4, which reflects our projected needs and allocations for the upcoming projects and departmental expenses. We have made several adjustments to optimize our resources and anticipate potential needs.\n\nPlease review the proposed budget carefully and provide your feedback or approval by Wednesday. Your prompt response will help us stay on track with our financial planning and ensure no delays in departmental activities.\n\nThank you for your attention to this matter and your ongoing commitment to our financial health.\n\nBest regards,\n\nJessica Davis\nFinance Department\nj.davis@company.com'
+    content:
+      'Hi Everyone,\n\nThe proposed Q4 budget document has been updated with the latest vendor and payroll estimates. Please review the revised version attached and share your final comments by Friday.\n\nEarly approval will ensure timely fund allocation for the next quarter and avoid processing delays.\n\nBest,\nJessica Davis\nFinance Lead'
   },
   {
     id: '6',
@@ -327,14 +331,15 @@ export const mockEmails: Email[] = [
     status: 'Screening (HR)',
     isRead: true,
     isStarred: false,
-    content: 'Dear Team,\n\nI hope this message finds you well. As we approach the final quarter of the year, it\'s essential to finalize our budget to ensure all departments can operate smoothly and efficiently.\n\nAttached, you will find the proposed budget for Q4, which reflects our projected needs and allocations for the upcoming projects and departmental expenses. We have made several adjustments to optimize our resources and anticipate potential needs.\n\nPlease review the proposed budget carefully and provide your feedback or approval by Wednesday. Your prompt response will help us stay on track with our financial planning and ensure no delays in departmental activities.\n\nThank you for your attention to this matter and your ongoing commitment to our financial health.\n\nBest regards,\n\nOliver Smith\nSales Associate\no.smith@company.com'
+    content:
+      'Dear HR Department,\n\nFollowing up on our conversation, I’ve attached the reference letters from my previous managers. Each includes details about my sales performance and client management record.\n\nPlease confirm once the documents are received successfully. I look forward to the next steps in the process.\n\nSincerely,\nOliver Smith'
   },
   {
     id: '7',
     sender: {
       name: 'Anna Lee',
       email: 'a.lee@company.com',
-      role: 'Data Scientist'
+      role: 'HR Specialist'
     },
     subject: 'HR Compliance Training Reminder',
     preview: 'Offer Stage',
@@ -343,9 +348,11 @@ export const mockEmails: Email[] = [
     status: 'Offer Stage',
     isRead: true,
     isStarred: false,
-    content: 'Dear Team,\n\nI hope this message finds you well. As we approach the final quarter of the year, it\'s essential to finalize our budget to ensure all departments can operate smoothly and efficiently.\n\nAttached, you will find the proposed budget for Q4, which reflects our projected needs and allocations for the upcoming projects and departmental expenses. We have made several adjustments to optimize our resources and anticipate potential needs.\n\nPlease review the proposed budget carefully and provide your feedback or approval by Wednesday. Your prompt response will help us stay on track with our financial planning and ensure no delays in departmental activities.\n\nThank you for your attention to this matter and your ongoing commitment to our financial health.\n\nBest regards,\n\nAnna Lee\nData Scientist\na.lee@company.com'
+    content:
+      'Hello Team,\n\nThis is a reminder that our HR compliance and workplace conduct training is scheduled for next Monday at 2 PM. Attendance is mandatory for all full-time employees.\n\nPlease complete the pre-session form linked below by Friday. Let me know if you have any scheduling conflicts so we can arrange an alternate session.\n\nThanks,\nAnna Lee\nHR Specialist'
   }
 ];
+
 
 export const getStatusColor = (status: string) => {
   switch (status) {

@@ -19,16 +19,20 @@ interface EmailContentProps {
   email: Email;
   currentPage: number;
   totalEmails: number;
+  onBack?: () => void;
 }
 
-const EmailContent = ({ email, currentPage, totalEmails }: EmailContentProps) => {
+const EmailContent = ({ email, currentPage, totalEmails, onBack }: EmailContentProps) => {
 
   return (
     <div className="h-full flex flex-col p-3">
       <div>
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <button className="p-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+            <button
+              onClick={onBack}
+              className="p-2 text-gray-600 hover:bg-gray-100 rounded-lg max-[1099px]:block hidden"
+            >
               <ArrowLeft size={18} />
             </button>
             <button className="p-2 text-gray-600 hover:bg-gray-100 rounded-lg">
@@ -43,11 +47,11 @@ const EmailContent = ({ email, currentPage, totalEmails }: EmailContentProps) =>
           </div>
 
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center">
             <button className="p-1 text-gray-600 hover:bg-white rounded">
               <ChevronLeft size={18} />
             </button>
-            <span className="text-sm text-gray-600">
+            <span className="text-xs text-gray-600">
               {currentPage} from {totalEmails}
             </span>
             <button className="p-1 text-gray-600 hover:bg-white rounded">
@@ -72,7 +76,7 @@ const EmailContent = ({ email, currentPage, totalEmails }: EmailContentProps) =>
       <div className="p-4 bg-white rounded-lg mt-4">
         <div className="flex items-start gap-4">
           <div className="w-9 h-9 bg-[#0A66C2] rounded-full flex items-center justify-center text-white text-lg font-medium" />
-          <div className="flex-1 flex justify-between gap-1">
+          <div className="flex-1 flex justify-between flex-wrap gap-1">
             <div>
               <h3 className="font-medium text-sm text-gray-900">{email.sender.name}</h3>
               <p className="text-xs text-gray-600 mb-2">{email.sender.email}</p>
@@ -85,7 +89,7 @@ const EmailContent = ({ email, currentPage, totalEmails }: EmailContentProps) =>
         <h2 className="text-gray-900 my-3">
           {email.subject}
         </h2>
-        <div className="flex-1 overflow-y-auto bg-white">
+        <div className="max-h-[450px] scrollbar-custom overflow-y-auto bg-white">
           <div className="prose prose-sm max-w-none">
             {email.content.split('\n').map((paragraph, index) => (
               <p key={index} className="text-gray-700 text-[12px] leading-relaxed mb-4">
