@@ -65,8 +65,8 @@ const Sidebar = ({ isOpen }: props) => {
         })}
       </nav>
 
-      <div className="p-4 m-4 bg-white rounded-lg text-gray-900">
-        <h3 className="font-bold text-[22px] mb-2">
+      <div className="p-3 m-2 bg-white rounded-lg text-gray-900">
+        <h3 className="font-semibold text-[20px] mb-2">
           Elevate Your Recruitment Strategy
         </h3>
         <p className="text-xs text-gray-600 mb-4">
