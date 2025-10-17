@@ -383,3 +383,139 @@ export const formatDate = (date: string, time: string) => {
 
   return `${monthNames[monthIndex]} ${day}, ${currentYear}, ${time}`;
 };
+
+// Job Postings Interface and Data
+export interface JobPosting {
+  id: string;
+  title: string;
+  department: string;
+  icon: React.ReactNode;
+  status: 'Active' | 'Draft' | 'Pending' | 'Closed';
+  tag?: string;
+  level: string;
+  experience: string;
+  type: string;
+  location: string;
+  salary: string;
+  applicants: number;
+  lastUpdated: string;
+}
+
+export const mockJobPostings: JobPosting[] = [
+  {
+    id: '1',
+    title: 'Marketing Coordinator',
+    department: 'Marketing',
+    icon: <PenTool size={18} color="black" />,
+    status: 'Draft',
+    level: 'Entry-level',
+    experience: '0-2 Years Experience',
+    type: 'Full-time',
+    location: 'On-site',
+    salary: '$45,000 - $60,000',
+    applicants: 24,
+    lastUpdated: '2 days ago'
+  },
+  {
+    id: '2',
+    title: 'Senior Software Engineer',
+    department: 'Engineering',
+    icon: <CodeXml size={18} color="black" />,
+    status: 'Active',
+    tag: 'High Technical Fit',
+    level: 'Senior',
+    experience: '5+ Years Experience',
+    type: 'Full-time',
+    location: 'Remote',
+    salary: '$90,000 - $120,000',
+    applicants: 156,
+    lastUpdated: '1 day ago'
+  },
+  {
+    id: '3',
+    title: 'Product Manager',
+    department: 'Product',
+    icon: <ChartCandlestick size={18} color="black" />,
+    status: 'Active',
+    tag: 'Leadership Potential',
+    level: 'Mid-level',
+    experience: '3-5 Years Experience',
+    type: 'Full-time',
+    location: 'Hybrid',
+    salary: '$80,000 - $100,000',
+    applicants: 89,
+    lastUpdated: '3 days ago'
+  },
+  {
+    id: '4',
+    title: 'UX Designer',
+    department: 'Design',
+    icon: <PenTool size={18} color="black" />,
+    status: 'Pending',
+    tag: 'Strong Cultural Fit',
+    level: 'Mid-level',
+    experience: '2-4 Years Experience',
+    type: 'Full-time',
+    location: 'On-site',
+    salary: '$65,000 - $85,000',
+    applicants: 67,
+    lastUpdated: '1 week ago'
+  },
+  {
+    id: '5',
+    title: 'Data Analyst',
+    department: 'Analytics',
+    icon: <ChartCandlestick size={18} color="black" />,
+    status: 'Active',
+    level: 'Entry-level',
+    experience: '1-3 Years Experience',
+    type: 'Full-time',
+    location: 'Remote',
+    salary: '$55,000 - $70,000',
+    applicants: 43,
+    lastUpdated: '4 days ago'
+  },
+  {
+    id: '6',
+    title: 'Sales Representative',
+    department: 'Sales',
+    icon: <CircleUser size={18} color="black" />,
+    status: 'Active',
+    tag: 'Interviews This Week',
+    level: 'Entry-level',
+    experience: '0-2 Years Experience',
+    type: 'Full-time',
+    location: 'On-site',
+    salary: '$40,000 - $55,000',
+    applicants: 112,
+    lastUpdated: '2 days ago'
+  },
+  {
+    id: '7',
+    title: 'DevOps Engineer',
+    department: 'Engineering',
+    icon: <CodeXml size={18} color="black" />,
+    status: 'Draft',
+    level: 'Mid-level',
+    experience: '3-5 Years Experience',
+    type: 'Full-time',
+    location: 'Hybrid',
+    salary: '$85,000 - $110,000',
+    applicants: 0,
+    lastUpdated: '1 week ago'
+  },
+  {
+    id: '8',
+    title: 'HR Specialist',
+    department: 'Human Resources',
+    icon: <CircleUser size={18} color="black" />,
+    status: 'Active',
+    level: 'Mid-level',
+    experience: '2-4 Years Experience',
+    type: 'Full-time',
+    location: 'On-site',
+    salary: '$50,000 - $65,000',
+    applicants: 78,
+    lastUpdated: '3 days ago'
+  }
+];
