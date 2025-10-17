@@ -11,7 +11,7 @@ const JobPostings = () => {
   const [sortBy, setSortBy] = useState('last-updated');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = Math.ceil(jobs.length / 8); // 8 jobs per page
+  const totalPages = Math.ceil(jobs.length / 8);
 
   const handleSortChange = (newSortBy: string) => {
     setSortBy(newSortBy);
@@ -26,11 +26,10 @@ const JobPostings = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
+    <div className="min-h-screen rounded-lg overflow-clip">
+
       <JobPostingsHeader />
-      
-      {/* Controls */}
+
       <JobControls
         totalJobs={jobs.length}
         sortBy={sortBy}
@@ -38,8 +37,7 @@ const JobPostings = () => {
         viewMode={viewMode}
         onViewModeChange={handleViewModeChange}
       />
-      
-      {/* Job Grid */}
+
       <JobPostingsGrid
         jobs={jobs}
         viewMode={viewMode}
