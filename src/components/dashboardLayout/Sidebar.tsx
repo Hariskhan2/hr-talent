@@ -35,7 +35,7 @@ const Sidebar = ({ isOpen }: props) => {
   const router = useRouter()
 
   return (
-    <aside className={`w-[221px] max-[1023px]:w-[250px] z-[100]  ${isOpen ? "translate-x-0" : "max-[1023px]:-translate-x-full"} duration-300 fixed left-2 max-[1023px]:left-0 top-2 max-[1023px]:top-0 min-h-screen bg-gradient-to-b from-[#0A66C2] to-[#05305C] text-white flex flex-col rounded-xl max-[1023px]:rounded-l-none`}>
+    <aside className={`w-[221px] max-[1023px]:w-[250px] z-[100] hide-scrollbar ${isOpen ? "translate-x-0" : "max-[1023px]:-translate-x-full"} duration-300 fixed left-2 max-[1023px]:left-0 top-2 max-[1023px]:top-0 h-screen overflow-y-auto bg-gradient-to-b from-[#0A66C2] to-[#05305C] text-white flex flex-col rounded-xl max-[1023px]:rounded-l-none`}>
 
       <div className="py-4 flex justify-center">
         <Image src={AppLogo} alt="" />
