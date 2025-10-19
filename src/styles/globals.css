@@ -79,11 +79,13 @@ body {
 .scrollbar-custom {
   scrollbar-width: thin;
   scrollbar-color: black transparent;
+  border-radius: 10px;
 }
 
 .scrollbar-custom::-webkit-scrollbar {
   width: 3px;
   height: 3px;
+  border-radius: 10px;
 }
 
 .scrollbar-custom::-webkit-scrollbar-track {
