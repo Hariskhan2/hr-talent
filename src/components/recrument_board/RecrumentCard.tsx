@@ -11,12 +11,17 @@ type props = {
   desc: string;
   date: string;
   attachNumber: number;
-  messageCount: number
+  messageCount: number;
+  onDragStart?: () => void;
 }
 
-const RecrumentCard = ({ ImgSrc, name, email, number, desc, date, attachNumber, messageCount }: props) => {
+const RecrumentCard = ({ ImgSrc, name, email, number, desc, date, attachNumber, messageCount, onDragStart }: props) => {
   return (
-    <div className='bg-white p-3 rounded-lg shadow-md mt-3'>
+    <div
+      className='bg-white p-3 rounded-lg shadow-md mt-3 cursor-move hover:shadow-lg transition-shadow'
+      draggable
+      onDragStart={onDragStart}
+    >
       <div className='flex items-center gap-3 relative'>
         <Image src={ImgSrc} alt='' className='h-12 w-12 rounded-full' />
         <div>
