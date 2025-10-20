@@ -5,6 +5,7 @@ import { FileText } from 'lucide-react';
 
 const CandidateCard = () => {
   return (
+    
     <div className='bg-[#FDFDFD] shadow-md rounded-[10px] p-4'>
       <div className='flex justify-center flex-col items-center'>
         <div className='border border-[#0A66C2] flex items-center gap-1 rounded-[5px] z-1 relative py-1 px-2 bg-white'>
