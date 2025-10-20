@@ -3,10 +3,11 @@ import { recruitmentData } from '@/utils/mockData';
 import RecrumentCard from '@/components/recrument_board/RecrumentCard';
 import RecrumentHeader from '@/components/recrument_board/RecrumentHeader';
 import { Plus } from 'lucide-react';
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
 type Candidate = {
   id: number;
-  ImgSrc: any;
+  ImgSrc: string | StaticImport;
   name: string;
   email: string;
   number: number;
