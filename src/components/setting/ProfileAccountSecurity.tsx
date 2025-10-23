@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { User, NotebookText, Lock, SquarePen } from "lucide-react";
+import { User, NotebookText, SquarePen, ShieldEllipsis } from "lucide-react";
 import FloatingInput from "@/components/inputs/FloatingLabelInput";
 
 type Props = {
@@ -72,10 +72,8 @@ const ProfileAccountSecurity: React.FC<Props> = ({
       <div className="bg-white rounded-xl border border-gray-200">
         <div className="flex items-center justify-between px-5 py-3">
           <div className="flex items-center gap-2">
-            <span className="w-6 h-6 grid place-items-center rounded-md bg-gray-100 text-gray-700">
-              <User className="w-4 h-4" />
-            </span>
-            <h3 className="text-sm font-semibold text-gray-900">Full name</h3>
+            <User className="w-5 h-5" />
+            <h3 className="text-[18px] text-gray-900">Full name</h3>
           </div>
           {activeSection !== "fullname" && (
             <SquarePen onClick={() => setActiveSection("fullname")} color="#005DDC" className="w-4 cursor-pointer h-4" />
@@ -90,7 +88,7 @@ const ProfileAccountSecurity: React.FC<Props> = ({
                 title="First Name"
                 value={draftFirst}
                 onChange={(e) => setDraftFirst(e.target.value)}
-                height="40px"
+
                 inputClassName="rounded-lg border-gray-300"
               />
               <FloatingInput
@@ -98,7 +96,7 @@ const ProfileAccountSecurity: React.FC<Props> = ({
                 title="Last Name"
                 value={draftLast}
                 onChange={(e) => setDraftLast(e.target.value)}
-                height="40px"
+
                 inputClassName="rounded-lg border-gray-300"
               />
             </div>
@@ -106,14 +104,14 @@ const ProfileAccountSecurity: React.FC<Props> = ({
               <button
                 type="button"
                 onClick={saveName}
-                className="text-xs h-8 px-4 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
+                className="text-xs h-8 px-6 rounded-md bg-[#005DDC] text-white"
               >
                 Save
               </button>
               <button
                 type="button"
                 onClick={cancelName}
-                className="text-xs h-8 px-4 rounded-lg border border-gray-300 hover:bg-gray-50"
+                className="text-xs h-8 px-4"
               >
                 Cancel
               </button>
@@ -122,12 +120,12 @@ const ProfileAccountSecurity: React.FC<Props> = ({
         ) : (
           <div className="border-t border-gray-100 px-5 py-4 grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <p className="text-xs text-gray-500 mb-1">First name</p>
-              <p className="text-sm text-gray-900">{first}</p>
+              <p>First name</p>
+              <p className="text-[#757575]">{first}</p>
             </div>
-            <div>
-              <p className="text-xs text-gray-500 mb-1">Last name</p>
-              <p className="text-sm text-gray-900">{last}</p>
+            <div> 
+              <p>Last name</p>
+              <p className="text-[#757575]">{last}</p>
             </div>
           </div>
         )}
@@ -137,10 +135,8 @@ const ProfileAccountSecurity: React.FC<Props> = ({
       <div className="bg-white rounded-xl border border-gray-200">
         <div className="flex items-center justify-between px-5 py-3">
           <div className="flex items-center gap-2">
-            <span className="w-6 h-6 grid place-items-center rounded-md bg-gray-100 text-gray-700">
-              <NotebookText className="w-4 h-4" />
-            </span>
-            <h3 className="text-sm font-semibold text-gray-900">Account</h3>
+            <NotebookText className="w-5 h-5" />
+            <h3 className="text-[18px] text-gray-900">Account</h3>
           </div>
         </div>
 
@@ -152,7 +148,6 @@ const ProfileAccountSecurity: React.FC<Props> = ({
                 title="Email Address"
                 value={draftCurrentEmail}
                 onChange={(e) => setDraftCurrentEmail(e.target.value)}
-                height="40px"
                 inputClassName="rounded-lg border-gray-300"
               />
               <FloatingInput
@@ -160,7 +155,6 @@ const ProfileAccountSecurity: React.FC<Props> = ({
                 title="New Email Address"
                 value={draftNewEmail}
                 onChange={(e) => setDraftNewEmail(e.target.value)}
-                height="40px"
                 inputClassName="rounded-lg border-gray-300"
               />
             </div>
@@ -168,14 +162,14 @@ const ProfileAccountSecurity: React.FC<Props> = ({
               <button
                 type="button"
                 onClick={saveEmail}
-                className="text-xs h-8 px-4 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
+                className="text-xs h-8 px-6 rounded-md bg-[#005DDC] text-white"
               >
                 Save
               </button>
               <button
                 type="button"
                 onClick={cancelEmail}
-                className="text-xs h-8 px-4 rounded-lg border border-gray-300 hover:bg-gray-50"
+                className="text-xs h-8 px-4"
               >
                 Cancel
               </button>
@@ -184,13 +178,13 @@ const ProfileAccountSecurity: React.FC<Props> = ({
         ) : (
           <div className="border-t border-gray-100 px-5 py-4 flex items-center justify-between">
             <div>
-              <div className="text-xs text-gray-500">Email Address</div>
-              <div className="text-sm text-gray-900">{currentEmail}</div>
+              <div>Email Address</div>
+              <div className="text-[#757575]">{currentEmail}</div>
             </div>
             <button
               type="button"
               onClick={() => setActiveSection("email")}
-              className="text-xs h-8 px-3 rounded-lg border border-gray-300 hover:bg-gray-50"
+              className="text-xs h-8 px-4 rounded-md border  border-[#005DDC] text-[#005DDC]"
             >
               Reset Email
             </button>
@@ -202,10 +196,8 @@ const ProfileAccountSecurity: React.FC<Props> = ({
       <div className="bg-white rounded-xl border border-gray-200">
         <div className="flex items-center justify-between px-5 py-3">
           <div className="flex items-center gap-2">
-            <span className="w-6 h-6 grid place-items-center rounded-md bg-gray-100 text-gray-700">
-              <Lock className="w-4 h-4" />
-            </span>
-            <h3 className="text-sm font-semibold text-gray-900">Security</h3>
+            <ShieldEllipsis className="w-5 h-5" />
+            <h3 className="text-[18px] text-gray-900">Security</h3>
           </div>
         </div>
 
@@ -218,7 +210,6 @@ const ProfileAccountSecurity: React.FC<Props> = ({
                 type="password"
                 value={oldPassword}
                 onChange={(e) => setOldPassword(e.target.value)}
-                height="40px"
                 inputClassName="rounded-lg border-gray-300"
               />
               <FloatingInput
@@ -227,7 +218,6 @@ const ProfileAccountSecurity: React.FC<Props> = ({
                 type="password"
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
-                height="40px"
                 inputClassName="rounded-lg border-gray-300"
               />
             </div>
@@ -235,14 +225,14 @@ const ProfileAccountSecurity: React.FC<Props> = ({
               <button
                 type="button"
                 onClick={savePassword}
-                className="text-xs h-8 px-4 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
+                className="text-xs h-8 px-6 rounded-md bg-[#005DDC] text-white"
               >
                 Save
               </button>
               <button
                 type="button"
                 onClick={cancelPassword}
-                className="text-xs h-8 px-4 rounded-lg border border-gray-300 hover:bg-gray-50"
+                className="text-xs h-8 px-4"
               >
                 Cancel
               </button>
@@ -251,13 +241,13 @@ const ProfileAccountSecurity: React.FC<Props> = ({
         ) : (
           <div className="border-t border-gray-100 px-5 py-4 flex items-center justify-between">
             <div>
-              <div className="text-xs text-gray-500">Password</div>
-              <div className="text-sm text-gray-900">••••••••••</div>
+              <div>Password</div>
+              <div className="text-[#757575]">••••••••••</div>
             </div>
             <button
               type="button"
               onClick={() => setActiveSection("password")}
-              className="text-xs h-8 px-3 rounded-lg border border-gray-300 hover:bg-gray-50"
+              className="text-xs h-8 px-4 rounded-md border  border-[#005DDC] text-[#005DDC]"
             >
               Reset Password
             </button>

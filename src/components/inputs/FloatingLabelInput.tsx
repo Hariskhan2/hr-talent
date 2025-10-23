@@ -45,7 +45,7 @@ const FloatingInput = forwardRef<HTMLInputElement, FloatingInputProps>(
       labelFont = "400",
       bgColor = "transparent",
       type = "text",
-      height = "50px",
+      height = "46px",
       labelColor = "#2D2D2D",
     },
     ref
@@ -103,9 +103,9 @@ const FloatingInput = forwardRef<HTMLInputElement, FloatingInputProps>(
         <label
           htmlFor={id}
           className={`absolute left-3 bg-white px-1 text-gray-500 transition-all 
-            top-1/2 -translate-y-1/2 text-[15px]
-            peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-[15px] peer-placeholder-shown:text-gray-400
-            peer-focus:-top-[1px] peer-focus:text-[14px]
+            top-1/2 -translate-y-1/2 text-[13px]
+            peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-[13px] peer-placeholder-shown:text-gray-400
+            peer-focus:top-[1px] peer-focus:text-[13px]
             peer-[&:not(:placeholder-shown)]:top-[-1px] peer-[&:not(:placeholder-shown)]:text-[13px]
             peer-[&:-webkit-autofill]:-top-[1px] peer-[&:-webkit-autofill]:text-[13px]`}
           style={{ color: labelColor, fontWeight: labelFont }}

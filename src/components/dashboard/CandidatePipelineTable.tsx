@@ -63,7 +63,7 @@ const CandidatesPipeline = () => {
         </div>
       </div>
 
-      <div className="flex border-b overflow-x-auto scrollbar-custom text-[14px] text-gray-700">
+      <div className="flex border-b overflow-x-auto hide-scrollbar text-[14px] text-gray-700">
         {["All Applicants", "Screening", "Shortlisted", "Interviewing", "Job Offer"].map(
           (tab, i) => (
             <button
@@ -84,7 +84,7 @@ const CandidatesPipeline = () => {
         {tabData[activeTab as keyof typeof tabData].length > 0 ? (
           <table className="min-w-full text-left border-collapse">
             <thead>
-              <tr className="text-[13px] whitespace-nowrap text-gray-500 border-b bg-gray-50">
+              <tr className="text-[13px] sticky top-0 z-50 whitespace-nowrap text-gray-500 border-b bg-gray-50">
                 <th className="px-6 py-3 font-medium">Name <Code size={12} className="inline rotate-90" /></th>
                 <th className="px-6 py-3 font-medium">Role <Code size={12} className="inline rotate-90" /></th>
                 <th className="px-6 py-3 font-medium">Date <Code size={12} className="inline rotate-90" /></th>

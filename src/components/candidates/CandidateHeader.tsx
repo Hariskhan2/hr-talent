@@ -17,7 +17,7 @@ type props = {
 const CandidateHeader = ({ onclick }: props) => {
   return (
     <div className="bg-[#FDFDFD] p-2 rounded-xl flex items-center max-[700px]:flex-wrap max-[700px]:justify-between gap-3">
-      <Menu onClick={onclick} className="cursor-pointer" />
+      <Menu onClick={onclick} className="cursor-pointer hidden max-[900px]:block" />
       <div className="flex items-center bg-[#F3F3F3] pl-3 rounded-lg w-full gap-2 overflow-hidden max-[700px]:order-1">
         <Search size={18} className="text-gray-400" />
         <input
